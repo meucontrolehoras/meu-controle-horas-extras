@@ -1,6 +1,18 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f1f5f9;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("imagens/godzilla.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
     margin: 0;
     padding: 20px;
 }
@@ -8,12 +20,15 @@ body{
     max-width: 600px;
     margin: auto;
 }
-header{
-    background-color: red;
+header {
+    background-color: rgba(10, 15, 25, 0.92);
     color: white;
     padding: 25px;
     border-radius: 12px;
     text-align: center;
+
+    border: 1px solid rgba(50, 140, 255, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 .calcularora{
     background-color: white;
@@ -36,16 +51,33 @@ input{
     box-sizing:border-box;
 }
 
-button{
+button {
     width: 100%;
     padding: 14px;
     margin-top: 20px;
-    background-color: #2563eb;
+
+    background-color: rgba(20, 100, 220, 0.65);
     color: white;
-    border: none;
+
+    border: 1px solid rgba(80, 170, 255, 0.6);
     border-radius: 8px;
+
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(20, 130, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
+}
+
+button:active {
+    background-color: #0875d1;
+    transform: scale(0.98);
 }
 
 .resultado{
@@ -58,4 +90,46 @@ footer{
     text-align: center;
     color: #64748b;
     margin-top: 20px;
+}
+
+h2,
+label {
+    color: #ffffff;
+}
+
+input {
+    background-color: rgba(20, 30, 45, 0.55);
+    color: #ffffff;
+    border: 1px solid rgba(80, 160, 255, 0.35);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    background-color: rgba(20, 35, 60, 0.95);
+    border-color: #00aaff;
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.6);
+}
+
+
+#resultado {
+    background-color: rgba(10, 20, 35, 0.85);
+    color: #ffffff;
+
+    padding: 20px;
+    margin-top: 20px;
+
+    border: 1px solid rgba(0, 170, 255, 0.5);
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.25);
+
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: center;
 }
