@@ -281,3 +281,9 @@ select:focus {
 
     box-shadow: 0 0 12px rgba(0, 150, 255, 0.2);
 }
+
+/* Função financeira reservada para o futuro */
+.calculoValores,
+#btnMostrarValores {
+    display: none !important;
+}
