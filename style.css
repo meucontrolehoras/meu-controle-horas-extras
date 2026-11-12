@@ -1,25 +1,35 @@
+
+/* Fundo principal */
 body {
     font-family: Arial, Helvetica, sans-serif;
 
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.65),
-            rgba(0, 0, 0, 0.75)
-        ),
-        url("godzilla.png");
+    
+background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.30),
+        rgba(0, 0, 0, 0.45)
+    ),
+    url("godzilla.png");
+
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
-.container{
+
+/* Container principal */
+.container {
     max-width: 600px;
     margin: auto;
 }
+
+/* Cabeçalho */
 header {
     background-color: rgba(10, 15, 25, 0.92);
     color: white;
@@ -30,27 +40,57 @@ header {
     border: 1px solid rgba(50, 140, 255, 0.5);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
-.calcularora{
-    background-color: white;
+
+/* Área da calculadora */
+.calcularora {
+    background-color: rgba(10, 20, 35, 0.85);
     padding: 25px;
-    margin: 20px;
+    margin: 20px 0;
     border-radius: 12px;
+
+    border: 1px solid rgba(50, 140, 255, 0.3);
+    backdrop-filter: blur(6px);
 }
-label{
+
+/* Títulos e etiquetas */
+h2,
+label {
+    color: #ffffff;
+}
+
+label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
 }
 
-input{
+/* Campos de horário */
+input {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    border: 1px solid gray;
+    box-sizing: border-box;
+
+    background-color: rgba(20, 30, 45, 0.55);
+    color: #ffffff;
+
+    border: 1px solid rgba(80, 160, 255, 0.35);
     border-radius: 8px;
-    box-sizing:border-box;
+
+    font-size: 16px;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
 }
 
+/* Campo selecionado */
+input:focus {
+    background-color: rgba(20, 35, 60, 0.95);
+    border-color: #00aaff;
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.6);
+}
+
+/* Botão calcular */
 button {
     width: 100%;
     padding: 14px;
@@ -70,54 +110,21 @@ button {
     transition: all 0.3s ease;
 }
 
+/* Efeito ao passar o mouse */
 button:hover {
     background-color: rgba(20, 130, 255, 0.9);
     box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
 }
 
+/* Efeito ao clicar */
 button:active {
     background-color: #0875d1;
     transform: scale(0.98);
 }
 
-.resultado{
-    background-color: #eff6ff;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-footer{
-    text-align: center;
-    color: #64748b;
-    margin-top: 20px;
-}
-
-h2,
-label {
-    color: #ffffff;
-}
-
-input {
-    background-color: rgba(20, 30, 45, 0.55);
-    color: #ffffff;
-    border: 1px solid rgba(80, 160, 255, 0.35);
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 16px;
-
-    backdrop-filter: blur(6px);
-    transition: all 0.3s ease;
-}
-
-input:focus {
-    background-color: rgba(20, 35, 60, 0.95);
-    border-color: #00aaff;
-    outline: none;
-    box-shadow: 0 0 12px rgba(0, 170, 255, 0.6);
-}
-
-
-#resultado {
+/* Quadro do resultado */
+#resultado,
+.resultado {
     background-color: rgba(10, 20, 35, 0.85);
     color: #ffffff;
 
@@ -132,4 +139,145 @@ input:focus {
     font-size: 17px;
     line-height: 1.6;
     text-align: center;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    color: #cbd5e1;
+    margin-top: 20px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    box-sizing: border-box;
+
+    background-color: rgba(20, 30, 45, 0.85);
+    color: white;
+
+    border: 1px solid rgba(80, 160, 255, 0.35);
+    border-radius: 8px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #00aaff;
+    outline: none;
+    box-shadow: 0 0 12px rgba(0, 170, 255, 0.6);
+}
+
+#resultado {
+    white-space: pre-line;
+}
+
+/* Histórico de horas extras */
+.historico {
+    background-color: rgba(10, 20, 35, 0.85);
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(50, 140, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.25);
+
+    backdrop-filter: blur(6px);
+}
+
+/* Lista de registros */
+#listaHistorico {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* Botões de excluir registros */
+.historico button {
+    width: auto;
+    padding: 7px 12px;
+    margin-top: 0;
+    margin-left: 10px;
+
+    background-color: rgba(220, 38, 38, 0.75);
+    color: white;
+
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.historico button:hover {
+    background-color: #dc2626;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Área de cálculo dos valores */
+.calculoValores {
+    background-color: rgba(10, 20, 35, 0.85);
+    padding: 20px;
+    margin-top: 25px;
+
+    border: 1px solid rgba(0, 170, 255, 0.5);
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.25);
+    backdrop-filter: blur(6px);
+}
+
+/* Título da área financeira */
+.calculoValores h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Campos de salário e carga horária */
+.calculoValores input,
+.calculoValores select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Resultado do valor em reais */
+#valorTotalExtras {
+    background-color: rgba(0, 100, 70, 0.3);
+    color: #4ade80;
+
+    padding: 18px;
+    margin-top: 20px;
+
+    border: 1px solid rgba(74, 222, 128, 0.5);
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.15);
+}
+
+/* Destaque do total de horas do mês */
+#totalHorasMes {
+    background-color: rgba(20, 50, 100, 0.45);
+    color: #60a5fa;
+
+    padding: 18px;
+    margin-top: 20px;
+
+    border: 1px solid rgba(96, 165, 250, 0.5);
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    box-shadow: 0 0 12px rgba(0, 150, 255, 0.2);
 }

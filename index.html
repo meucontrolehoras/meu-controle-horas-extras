@@ -2,7 +2,7 @@
 <html lang="pt-BR">
     <HEAD>
         <meta charset="UTF-8">
-        <META NAME="VIEWPORT" content="WIND=device-width,initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Meu Controle de Horas Extras</title>
 
             <link rel="stylesheet" href="style.css">
@@ -15,30 +15,101 @@
             </header>
             <section class="calculadora">
 
-                <h2>Calculdora de horario</h2>
+            <h2>Calculadora de Horário</h2>
+             
+          <label for="dataTrabalho">Data do trabalho:</label>
+
+           <input type="date" id="dataTrabalho">
+
+
+              <label for="diaSemana">Dia da semana:</label>
+        <select id="diaSemana">
+            <option value="semana">Segunda a sexta</option>
+
+            <option value="sabado">Sábado</option>
+        </select>
+
 
                 <label>Horario de entrada</label>
 
                 <input type="time" id="entrada">
 
-                <label>Saida para almoco</label>
-
+                
+            <div id="camposAlmoco">
+                <label>Saída para almoço</label>
                 <input type="time" id="almoco">
 
-                <label>Volta do Almoco</label>
-
+                <label>Volta do almoço</label>
                 <input type="time" id="volta">
+             </div>
 
                 <label>Horário de saida de trabalho</label>
 
                 <input type="time" id="SaidaReal">
 
                 <button id="btnCalcular">Calcular Horario de Saida</button>
-                <p class="resultado" id="resultado">
+                 <p class="resultado" id="resultado">
                     Seu horario aqui.
-                </p>
+                 </p>
+
+                <button id="btnSalvar" type="button">
+                  Salvar Registro
+                </button>
+
 
             </section>
+
+<section class="historico">
+
+    <h2>Histórico de Horas Extras</h2>
+
+
+<label for="mesHistorico">Selecione o mês:</label>
+
+<input type="month" id="mesHistorico">
+
+<p id="totalHorasMes">
+    Total de horas extras: 0h00min
+</p>
+
+
+<div class="calculoValores">
+
+    <h2>Valor das Horas Extras</h2>
+
+    <label for="salario">Salário mensal (R$):</label>
+    <input type="number" id="salario"
+           min="0" step="0.01"
+           placeholder="Ex: 2800">
+
+    <label for="cargaMensal">Carga horária mensal:</label>
+    <input type="number" id="cargaMensal"
+           min="1" placeholder="Ex: 220">
+
+    <label for="percentualExtra">Adicional de hora extra:</label>
+    <select id="percentualExtra">
+        <option value="50">50%</option>
+        <option value="60">60%</option>
+        <option value="100">100%</option>
+    </select>
+
+    <p id="valorTotalExtras">
+        Valor estimado: R$ 0,00
+    </p>
+
+</div>
+
+    
+<button id="btnVerRegistros" type="button">
+    Ver Registros Salvos
+</button>
+
+    <div id="listaHistorico">
+        <p>Nenhum registro exibido ainda.</p>
+    </div>
+
+</section>
+
             <footer>
                 <p>Meu primeiro projeto de progamacao web</p>
             </footer>
