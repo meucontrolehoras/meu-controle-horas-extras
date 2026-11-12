@@ -98,6 +98,44 @@ seletorDia.addEventListener("change", function() {
 
 const camposAlmoco = document.getElementById("camposAlmoco");
 
+
+function identificarDiaSemana() {
+
+    const dataSelecionada = campoData.value;
+
+    if (dataSelecionada === "") {
+        return;
+    }
+
+    const partes = dataSelecionada.split("-");
+
+    const data = new Date(
+        Number(partes[0]),
+        Number(partes[1]) - 1,
+        Number(partes[2])
+    );
+
+    const dia = data.getDay();
+
+    if (dia === 0) {
+        alert("A data selecionada é um domingo!");
+        return;
+    }
+
+    if (dia === 6) {
+        seletorDia.value = "sabado";
+    } else {
+        seletorDia.value = "semana";
+    }
+
+    // Atualizar os campos de almoço
+    atualizarCamposAlmoco();
+
+    // Salvar o tipo de jornada
+    localStorage.setItem("diaSemana", seletorDia.value);
+}
+
+
 function atualizarCamposAlmoco() {
     if (seletorDia.value === "sabado") {
         camposAlmoco.style.display = "none";
@@ -107,6 +145,15 @@ function atualizarCamposAlmoco() {
 }
 
 seletorDia.addEventListener("change", atualizarCamposAlmoco);
+
+
+campoData.addEventListener("change", identificarDiaSemana);
+
+
+if (campoData.value !== "") {
+    identificarDiaSemana();
+}
+
 
 atualizarCamposAlmoco();
 
